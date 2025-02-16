@@ -62,3 +62,14 @@ export const insertCartSchema = z.object({
   sessionCartId: z.string().min(1, "Session card id is required"),
   userId: z.string().optional().nullable(),
 });
+
+// Schema for shipping adress
+export const shippingAddressSchema = z.object({
+  fullName: z.string().min(3, "Name be at least 3 characters"),
+  streetAddress: z.string().min(3, "Adress be at least 3 characters"),
+  city: z.string().min(3, "City be at least 3 characters"),
+  postalCode: z.string().min(3, "PostalCode be at least 3 characters"),
+  country: z.string().min(3, "Country be at least 3 characters"),
+  lat: z.number().optional(),
+  lng: z.number().optional(),
+});
