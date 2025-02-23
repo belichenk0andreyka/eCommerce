@@ -16,3 +16,5 @@ async function main() {
 }
 
 main();
+
+// to launch seeding => npx tsx ./db/seed
