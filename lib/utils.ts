@@ -39,7 +39,7 @@ export async function formatError(error: any) {
     // Handle other errors
     return typeof error.message === "string"
       ? error.message
-      : JSON.stringify(error.message);
+      : (JSON.stringify(error.message) as string);
   }
 }
 
@@ -70,6 +70,13 @@ export function formatCurrency(amount: number | string | null) {
   } else {
     return "NaN";
   }
+}
+
+//Format Number
+const NUMBER_FORMATTER = Intl.NumberFormat("en-US");
+
+export function formatNumber(number: number) {
+  return NUMBER_FORMATTER.format(number);
 }
 
 // Shorten UUID
